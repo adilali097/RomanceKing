@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RomanceKing</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+    <div class="container">
+        <h1>RomanceKing</h1>
+        <p>Find your perfect match!</p>
+        <div id="nameInputs">
+            <label for="boyName">Boy's Name:</label>
+            <input type="text" id="boyName" placeholder="Enter your name (boy)">
+            <label for="girlName">Girl's Name:</label>
+            <input type="text" id="girlName" placeholder="Enter your name (girl)">
+        </div>
+        <div id="loveMeter">
+            <label for="loveLevel">Love Level:</label>
+            <input type="range" min="0" max="100" value="50" id="loveLevel">
+            <span id="lovePercentage">50%</span>
+        </div>
+        <button id="findMatchBtn">Find Match</button>
+        <div id="matchResult"></div>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/service-worker.js');
+            });
+        }
+    </script>
+</body>
+</html>
